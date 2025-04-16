@@ -1,0 +1,24 @@
+.app {
+  display: flex;
+  border: 5px solid black;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cita {
+  border: 3px solid steelblue;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.formulario {
+  flex: 1;
+  border: 3px solid orange;
+  padding: 10px;
+}
+
+.listado {
+  flex: 1;
+  border: 3px solid peru;
+  padding: 10px;
+}
