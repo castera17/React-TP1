@@ -26,9 +26,10 @@ const Listado = () => {
 
   return (
     <div className="listado">
-      <h2>ADMINISTRA TUS CITAS</h2>
+      
       {citas.map((cita) => (
         <Cita
+          
           Nombre={cita.Nombre}
           Apellido={cita.Apellido}
           fecha={cita.fecha}

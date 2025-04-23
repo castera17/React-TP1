@@ -1,6 +1,8 @@
 const Formulario = () => {
     return (
       <div className="formulario">
+        
+      
         <form>
         <label for="Nombre">Nombre</label>
          <input type="text" />
