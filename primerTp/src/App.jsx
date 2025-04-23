@@ -8,7 +8,8 @@ function App() {
       <h1>ADMINISTRADOR DE CITAS</h1>
       <h2>CREA TU CITA</h2>
       <Formulario/>
-      <Listado />
+      <Listado/>
+      
     </div>
   )
 }

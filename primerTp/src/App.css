@@ -1,24 +1,93 @@
-.app {
-  display: flex;
-  border: 5px solid black;
-  max-width: 800px;
-  margin: auto;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #c31432, #240b36);
+  color: white;
+  padding: 2rem;
+  text-align: center;
 }
 
-.cita {
-  border: 3px solid steelblue;
-  margin-bottom: 10px;
-  padding: 10px;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.formulario,
+.citas {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  width: 320px;
+}
+
+.formulario h2,
+.citas h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
 .formulario {
-  flex: 1;
-  border: 3px solid orange;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
-.listado {
-  flex: 1;
-  border: 3px solid peru;
-  padding: 10px;
+.formulario input,
+.formulario textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #7a1ea1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.citas {
+  background-color: white;
+}
+
+.cita {
+  background: #b6afaf;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 4px rgba(77, 69, 69, 0.658);
+}
+
+.cita p {
+  margin: 0.3rem 0;
+}
+
+.cita button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
 }
