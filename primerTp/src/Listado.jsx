@@ -1,39 +1,26 @@
 import Cita from './Cita';
-import { useState } from 'react';
 
-const Listado = () => {
-  
-  const [citas] = useState([
-    {
-      Nombre: "Tiago",
-      Apellido: "Ghelman",
-      fecha: "2023-07-05",
-      sintomas: "Le duele la pierna"
-    },
-    {
-      Nombre: "Matias",
-      Apellido: "Castera",
-      fecha: "2023-08-05",
-      sintomas: "Come mucho"
-    },
-    {
-      Nombre: "Salva",
-      Apellido: "Soncini",
-      fecha: "2023-12-05",
-      sintomas: "No está durmiendo"
-    }
-  ]);
+
+const Listado = ({ citas, setCitas }) => {
+  const eliminarCita = (id) => {
+    const confirmar = window.confirm("¿Estás seguro de que querés eliminar esta cita?");
+    if (!confirmar) return;
+   
+    const nuevasCitas = citas.filter((cita) => cita.id !== id);
+    setCitas(nuevasCitas);
+  };
 
   return (
     <div className="listado">
-      
       {citas.map((cita) => (
         <Cita
-          
-          Nombre={cita.Nombre}
-          Apellido={cita.Apellido}
+          key={cita.id}
+          id={cita.id}
+          Nombre={cita.nombre}
+          Apellido={cita.apellido}
           fecha={cita.fecha}
           sintomas={cita.sintomas}
+          eliminarCita={eliminarCita} 
         />
       ))}
     </div>
