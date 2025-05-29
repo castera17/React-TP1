@@ -1,10 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Formulario from './Formulario';
 import Listado from './Listado';
 
 function App() {
   const [citas,setCitas] = useState([]);
+  useEffect(() => {
+    const CitasGuardadas = localStorage.getItem('citas');
+    if (CitasGuardadas) {
+      setCitas(JSON.parse(CitasGuardadas));
+    }
+  },[]);
+
+  useEffect(() => {
+    if(citas?.length){
+    localStorage.setItem('citas', JSON.stringify(citas));
+    }
+    else{
+      localStorage.removeItem('citas');
+    }
+  }, [citas]);
+
   return (
     <div className="contenedor-app">
     <h1>ADMINISTRADOR DE CITAS</h1>

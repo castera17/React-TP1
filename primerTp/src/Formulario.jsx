@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const Formulario = ({ citas, setCitas }) => {
   const [formulario, setFormulario] = useState({
@@ -18,18 +18,17 @@ const Formulario = ({ citas, setCitas }) => {
 
   const AgregarCita = (e) => {
     e.preventDefault();
-  
+
     const confirmar = window.confirm("¿Querés agregar esta cita?");
     if (!confirmar) return;
-  
 
     const nuevaCita = {
       ...formulario,
-      id: Date.now(), 
+      id: Date.now(),
     };
-  
+
     setCitas([...citas, nuevaCita]);
-  
+
     setFormulario({
       nombre: "",
       apellido: "",
@@ -37,6 +36,8 @@ const Formulario = ({ citas, setCitas }) => {
       sintomas: "",
     });
   };
+
+  
   return (
     <div className="formulario">
       <form onSubmit={AgregarCita}>
